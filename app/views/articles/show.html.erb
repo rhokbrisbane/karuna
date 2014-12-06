@@ -1,23 +1,15 @@
 
-<h1><%= @article.title %></h1>
+<h1 class='page-title'><%= @article.title %></h1>
 
 <% unless @video_id.blank? %>
-    <iframe width="560" height="315" src="http://www.youtube.com/embed/<%= @video_id %>?rel=0" frameborder="0"></iframe>
+  <iframe width="560" height="315" src="http://www.youtube.com/embed/<%= @video_id %>?rel=0" frameborder="0"></iframe>
 <% end %>
-
-<div>
-<%= @article.body.html_safe %>
-</div>
 
 <% unless @article.audio_link.blank? %>
-    <h4>Audio for this article</h4>
-    <iframe src="<%= @article.audio_link %>" frameborder="0" style="width:100%"></iframe>
+  <h4>Audio for this article</h4>
+  <iframe src="<%= @article.audio_link %>" frameborder="0" style="width:100%"></iframe>
 <% end %>
 
-<div>
-<%= @article.created_at.strftime("%d/%m/%y") %>
-</div>
-
-<div>
-<%= link_to "Home", controller: "home", action: "index" %>
+<div class='article-body'>
+  <%= @article.body.html_safe %>
 </div>
