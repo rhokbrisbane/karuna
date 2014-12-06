@@ -1,0 +1,44 @@
+
+$font-family:             'Open Sans', 'Helvetica Neue', sans-serif;
+$font-family-body:        $font-family;
+$font-family-headings:    $font-family;
+$font-family-input:       $font-family;
+$font-family-icons:       'icons';
+$font-family-mono:        'Menlo', 'Monaco', 'Courier New', monospace;
+
+$line-height:             1.5em;
+$line-height-relative:    1.5rem;
+
+$font-size:               100%;
+
+
+// Colours
+
+$color-primary:             #C4064E;
+$color-primary-light:       lighten($color-primary, 30%);
+$color-primary-dark:        darken($color-primary, 30%);
+
+$black:                     hsl(0,0%,9%);
+$white:                     lighten($black, 93.5%);
+$gray-darker:               lighten($black, 13.5%);
+$gray-dark:                 lighten($black, 20%);
+$gray:                      lighten($black, 33.5%);
+$gray-light:                lighten($black, 75%);
+$gray-lighter:              lighten($black, 87.5%);
+
+$color-success:             hsl(85, 60%, 52%);
+$color-success-light:       lighten($color-success, 35%);
+$color-warning:             hsl(45, 83%, 73%);
+$color-warning-light:       lighten($color-warning, 35%);
+$color-danger:              hsl(357, 88%, 63%);
+$color-danger-light:        lighten($color-danger, 35%);
+$color-info:                $color-primary;
+$color-info-light:          lighten($color-info, 35%);
+
+
+// Breakpoints
+
+$breakpoint-small:        32rem;
+$breakpoint-medium:       48rem;
+$breakpoint-large:        75rem;
+

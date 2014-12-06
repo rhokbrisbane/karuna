@@ -31,7 +31,7 @@ ActiveAdmin.register Group do
     f.inputs do
       f.input :name
       f.input :short_name
-      f.input :position
+      f.input :position, hint: "Ordered from low to high numbers", input_html: { min: "1" }
     end
     f.actions
   end

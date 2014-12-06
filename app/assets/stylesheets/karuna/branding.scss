@@ -1,5 +1,4 @@
 
-$color-primary: #C4064E;
 
 .logo {
   display: block;
@@ -8,11 +7,20 @@ $color-primary: #C4064E;
 }
 
 
-a {
+a, a:visited {
   color: $color-primary;
 
   &:hover {
     cursor: pointer;
     color: darken($color-primary, 10%);
   }
+}
+
+.footer {
+  text-align: center;
+}
+
+
+nav a {
+  display: block;
 }

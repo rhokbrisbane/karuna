@@ -9,6 +9,8 @@
   <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag :application, media: 'all' %>
 
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+
   <!--[if lt IE 9]>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
   <![endif]-->
@@ -17,7 +19,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
+  <header class='header'>
     <div class="container">
       <%= link_to image_tag('logo-red.svg'), root_path, class: 'logo' %>
     </div>
@@ -28,5 +30,17 @@
       <%= yield %>
     </div>
   </section>
+
+  <footer class='footer'>
+    <div class="container">
+
+      <% if current_admin_user %>
+        Currently logged in as <strong><%= current_admin_user.email %></strong>
+      <% end %>
+
+      <%= link_to 'Admin', admin_root_path %>
+
+    </div>
+  </footer>
 </body>
 </html>

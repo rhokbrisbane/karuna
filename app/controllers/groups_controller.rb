@@ -1,7 +1,7 @@
 class GroupsController < InheritedResources::Base
 
   def index
-    @groups = Group.all
+    @groups = Group.all.order(:position)
   end
 
   def show

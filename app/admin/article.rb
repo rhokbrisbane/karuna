@@ -44,7 +44,7 @@ ActiveAdmin.register Article do
       f.input :body, as: :html_editor
       f.input :video_link
       f.input :audio_link
-      f.input :position
+      f.input :position, hint: "Ordered from low to high numbers", input_html: { min: "1" }
     end
     f.actions
   end

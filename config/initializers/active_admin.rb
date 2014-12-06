@@ -235,3 +235,8 @@ ActiveAdmin.setup do |config|
   #
   # config.filters = true
 end
+
+
+ActiveAdmin.register_page "Back to website" do
+  menu priority: 1000, url: '/'
+end
