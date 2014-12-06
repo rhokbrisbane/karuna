@@ -1,24 +1,27 @@
 ActiveAdmin.register Group do
   menu priority: 1
 
-  permit_params :name, :position
+  permit_params :name, :short_name, :position
 
   index do
     selectable_column
     id_column
     column :name
+    column :short_name
     column :position
     column :created_at
     actions
   end
 
   filter :name
+  filter :short_name
   filter :created_at
 
   show do |group|
     attributes_table do
       row :id
       row :name
+      row :short_name
       row :position
       row :created_at
     end
@@ -27,6 +30,7 @@ ActiveAdmin.register Group do
   form do |f|
     f.inputs do
       f.input :name
+      f.input :short_name
       f.input :position
     end
     f.actions

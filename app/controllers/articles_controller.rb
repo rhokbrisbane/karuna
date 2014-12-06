@@ -5,7 +5,9 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    video_url = URI.parse(@article.video_link)
-    @video_id = Rack::Utils.parse_nested_query(video_url.query)["v"]
+    unless @article.video_link.blank?
+      video_url = URI.parse(@article.video_link)
+      @video_id = Rack::Utils.parse_nested_query(video_url.query)["v"]
+    end
   end
 end

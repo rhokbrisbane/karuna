@@ -12,6 +12,7 @@ gem 'pg'
 gem 'pg_search'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
+gem 'friendly_id', '~> 5.0.0'
 
 group :development do
   gem 'bullet'
