@@ -1,7 +1,7 @@
 ActiveAdmin.register Article do
   menu priority: 1
 
-  permit_params :title, :group_id, :body, :position
+  permit_params :title, :group_id, :body, :video_link, :audio_link, :position
 
   index do
     selectable_column
@@ -10,13 +10,13 @@ ActiveAdmin.register Article do
     column :group
     column :position
     column :created_at
+    column :video_link
+    column :audio_link
     actions
   end
 
   filter :title
-  filter :body
   filter :group
-  filter :position
   filter :created_at
 
   show do |article|
@@ -26,6 +26,8 @@ ActiveAdmin.register Article do
       row :title
       row :position
       row(:body) { article.body.html_safe }
+      row :video_link
+      row :audio_link
       row :created_at
     end
   end
@@ -35,6 +37,8 @@ ActiveAdmin.register Article do
       f.input :group
       f.input :title
       f.input :body
+      f.input :video_link
+      f.input :audio_link
       f.input :position
     end
     f.actions

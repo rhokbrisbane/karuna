@@ -1,6 +1,16 @@
 
 <h1><%= @article.title %></h1>
 
+<% unless @video_id.blank? %>
+    <iframe width="560" height="315" src="http://www.youtube.com/embed/<%= @video_id %>?rel=0" frameborder="0"></iframe>
+<% end %>
+
+<div>
 <%= @article.body.html_safe %>
+</div>
 
 <%= @article.created_at.strftime("%d/%m/%y") %>
+
+<div>
+<%= link_to "Home", controller: "home", action: "index" %>
+</div>
