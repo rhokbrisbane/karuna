@@ -13,7 +13,6 @@ ActiveAdmin.register Group do
   end
 
   filter :name
-  filter :position
   filter :created_at
 
   show do |group|

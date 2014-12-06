@@ -1,7 +1,8 @@
 ActiveAdmin.register Article do
   menu priority: 1
 
-  permit_params :title, :group_id, :body, :video_link, :audio_link, :position
+  permit_params :title, :group_id, :body, :video_link,
+    :audio_link, :position
 
   index do
     selectable_column
@@ -36,7 +37,7 @@ ActiveAdmin.register Article do
     f.inputs do
       f.input :group
       f.input :title
-      f.input :body
+      f.input :body, as: :html_editor
       f.input :video_link
       f.input :audio_link
       f.input :position

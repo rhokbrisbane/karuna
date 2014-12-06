@@ -1,0 +1,24 @@
+
+$color-primary: #C4064E;
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.logo {
+  display: block;
+  width: 20em;
+  height: 20em;
+  margin: 1.5em auto;
+}
+
+
+a {
+  color: $color-primary;
+
+  &:hover {
+    cursor: pointer;
+    color: darken($color-primary, 10%);
+  }
+}

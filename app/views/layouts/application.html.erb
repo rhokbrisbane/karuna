@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Karuna</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title><% "#{yield(:page_title)} | " if content_for?(:page_title) %>Karuna</title>
+
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta name='viewport' content='width = device-width, initial-scale=1'>
+
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= stylesheet_link_tag :application, media: 'all' %>
+
+  <!--[if lt IE 9]>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <![endif]-->
+
+  <%= javascript_include_tag :application %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <div class="container">
+      <%= link_to image_tag('logo-red.svg'), root_path, class: 'logo' %>
+    </div>
+  </header>
 
-<%= yield %>
-
+  <section>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </section>
 </body>
 </html>

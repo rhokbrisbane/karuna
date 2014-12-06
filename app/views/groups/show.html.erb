@@ -1,14 +1,13 @@
+<h1><%= link_to @group.name, @group %></h1>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
-
-<p>
-  <strong>Position:</strong>
-  <%= @group.position %>
-</p>
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<nav class='articles'>
+  <% if @group.articles.any? %>
+    <% @group.articles.each do |article| %>
+      <%= link_to article.title, article_path(article) %>
+    <% end %>
+  <% else %>
+    <p>No articles have been created for this group yet. :(</p>
+  <% end %>
+</nav>
