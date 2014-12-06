@@ -12,3 +12,4 @@ Create a `config/database.yml` file using `config/database.yml.sample` with your
 
   bundle exec rake db:setup
   bundle exec rails s
+
