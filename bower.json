@@ -1,0 +1,20 @@
+{
+  "name": "karuna",
+  "version": "0.0.0",
+  "homepage": "https://github.com/rhokbrisbane/karuna",
+  "authors": [
+    "Rowan Hogan <rowan.hogan@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "terrain": "~0.0.7"
+  }
+}
