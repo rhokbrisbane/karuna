@@ -9,7 +9,14 @@
 <%= @article.body.html_safe %>
 </div>
 
+<% unless @article.audio_link.blank? %>
+    <h4>Audio for this article</h4>
+    <iframe src="<%= @article.audio_link %>" frameborder="0" style="width:100%"></iframe>
+<% end %>
+
+<div>
 <%= @article.created_at.strftime("%d/%m/%y") %>
+</div>
 
 <div>
 <%= link_to "Home", controller: "home", action: "index" %>
