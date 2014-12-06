@@ -1,0 +1,10 @@
+
+<% if @articles.any? %>
+  <nav class='articles'>
+    <% @articles.each do |article| %>
+      <%= link_to article.title, article_path(article) %>
+    <% end %>
+  </nav>
+<% else %>
+  <p>No articles have been created yet. :(</p>
+<% end %>

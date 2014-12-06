@@ -1,0 +1,6 @@
+
+<h1><%= @article.title %></h1>
+
+<%= @article.body.html_safe %>
+
+<%= @article.created_at.strftime("%d/%m/%y") %>

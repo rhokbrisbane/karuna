@@ -114,6 +114,8 @@ ActiveAdmin.setup do |config|
   # Default:
   # config.root_to = 'dashboard#index'
 
+  config.root_to = 'articles#index'
+
   # == Admin Comments
   #
   # This allows your users to comment on any resource registered with Active Admin.
@@ -126,6 +128,8 @@ ActiveAdmin.setup do |config|
   #
   # You can change the name under which comments are registered:
   # config.comments_registration_name = 'AdminComment'
+
+  config.allow_comments = false
 
   # == Batch Actions
   #
