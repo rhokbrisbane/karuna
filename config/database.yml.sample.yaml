@@ -1,0 +1,14 @@
+postgres:       &postgres
+  adapter:      postgresql
+  encoding:     unicode
+  host:         localhost
+  min_messages: warning
+  username:     USERNAME
+
+development:
+  <<: *postgres
+  database:     karuna_dev
+
+test:
+  <<: *postgres
+  database:     karuna_test

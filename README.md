@@ -1,0 +1,14 @@
+Karuna
+======
+
+Infomration portal for Karuna - [karuna.org.au](http://karuna.org.au/)
+
+### Development
+
+  git clone git@github.com:rhokbrisbane/karuna.git
+  bundle install
+
+Create a `config/database.yml` file using `config/database.yml.sample` with your Postgres config
+
+  bundle exec rake db:setup
+  bundle exec rails s
