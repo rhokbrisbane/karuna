@@ -28,3 +28,21 @@
     background: $color-primary;
   }
 }
+
+
+.article-thumb {
+  display: block;
+  background-color: #aaa;
+  background-position: center;
+  height: 12em;
+  @include background-size(cover);
+}
+
+
+.article-link {
+  display: block;
+  margin: .75em 0;
+  font-size: 1.25em;
+  line-height: 1.333em;
+  font-family: $font-family-headings;
+}

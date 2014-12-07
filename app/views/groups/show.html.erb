@@ -8,7 +8,9 @@
     <div class="grid-container">
       <% @group.articles.each do |article| %>
         <div class="one-half">
-          <%= link_to article.title, [@group, article] %>
+          <%= link_to '', [@group, article], class: 'article-thumb', style: ("background-image: url(#{article.featured_image.url});" if article.featured_image.present?) %>
+
+          <%= link_to article.title, [@group, article], class: 'article-link' %>
         </div>
       <% end %>
     </div>
@@ -19,9 +21,9 @@
 
 <div class='arrow-nav'>
   <% unless @prev.blank? %>
-      <%= link_to "<< Previous Group", @prev, class: 'previous' %>
+    <%= link_to "<< Previous Group", @prev, class: 'previous' %>
   <% end %>
   <% unless @next.blank? %>
-      <%= link_to "Next Group >>", @next, class: 'next' %>
+    <%= link_to "Next Group >>", @next, class: 'next' %>
   <% end %>
 </div>
