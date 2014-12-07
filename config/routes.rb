@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     resources :articles ,  only: [:index, :show]
   end
 
+  get ':id', to: 'groups#show', as: 'short_group'
+
   root to: 'home#index'
 end
