@@ -1,3 +1,5 @@
+<% content_for :page_title, @meditation.name %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -11,9 +13,9 @@
 </p>
 
 <p>
-  <strong>Media url:</strong>
-  <%= @meditation.media_url %>
+  <audio src="<%= @meditation.media_url %>" controls>
+    Your browser does not support the <code>audio</code> element.
+  </audio>
 </p>
 
-<%= link_to 'Edit', edit_meditation_path(@meditation) %> |
 <%= link_to 'Back', meditations_path %>

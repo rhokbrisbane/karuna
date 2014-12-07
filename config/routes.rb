@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :meditations
-
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   ActiveAdmin.routes(self)
@@ -10,6 +8,8 @@ Rails.application.routes.draw do
   end
 
   get ':id', to: 'groups#show', as: 'short_group'
+
+  resources :meditations, only: [:index, :show]
 
   root to: 'home#index'
 end
