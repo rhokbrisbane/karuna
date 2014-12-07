@@ -1,16 +1,8 @@
 <% content_for :page_title, @meditation.name %>
 
-<p id="notice"><%= notice %></p>
+<%= @meditation.description.html_safe %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @meditation.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @meditation.description %>
-</p>
+<br>
 
 <p>
   <audio src="<%= @meditation.media_url %>" controls>
@@ -18,12 +10,12 @@
   </audio>
 </p>
 
-<p>
-  <div class='slick-carousel'></div>
+<div class='slick-carousel'>
   <% @meditation.images.find_each do |image| %>
     <div>
       <img src="<%= image.url %>" alt="<%= image.alt %>" title="<%= image.title %>">
     </div>
   <% end %>
-</p>
-<%= link_to 'Back', meditations_path %>
+</div>
+
+<%= link_to 'All meditations', meditations_path %>
