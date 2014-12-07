@@ -19,9 +19,11 @@
 </p>
 
 <p>
-  <div class='slick'></div>
+  <div class='slick-carousel'></div>
   <% @meditation.images.find_each do |image| %>
-    <img src="<%= image.url %>" alt="<%= image.alt %>" title="<%= image.title %>">
+    <div>
+      <img src="<%= image.url %>" alt="<%= image.alt %>" title="<%= image.title %>">
+    </div>
   <% end %>
 </p>
 <%= link_to 'Back', meditations_path %>
