@@ -4,7 +4,7 @@
 <% content_for :featured_image, @group.featured_image.url if @group.featured_image.present? %>
 
 <% unless @group.description.blank? %>
-<div class='article-body'>
+<div class='article-body' style="padding-bottom: 20px;">
   <%= @group.description.html_safe %>
 </div>
 <% end %>
