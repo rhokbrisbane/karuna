@@ -6,8 +6,7 @@
 <% end %>
 
 <% unless @article.audio_link.blank? %>
-  <h4>Audio for this article</h4>
-  <iframe src="<%= @article.audio_link %>" frameborder="0" style="width:100%"></iframe>
+  <%= @soundcloud_embed.html_safe %>
 <% end %>
 
 <div class='article-body'>
