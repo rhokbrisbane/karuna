@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20141207032607) do
   create_table "articles", force: true do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "position",    default: 1
+    t.integer  "position",                    default: 1
     t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -60,6 +60,10 @@ ActiveRecord::Schema.define(version: 20141207032607) do
     t.string   "audio_link"
     t.string   "short_title"
     t.string   "slug"
+    t.string   "featured_image_file_name"
+    t.string   "featured_image_content_type"
+    t.integer  "featured_image_file_size"
+    t.datetime "featured_image_updated_at"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -77,11 +81,15 @@ ActiveRecord::Schema.define(version: 20141207032607) do
 
   create_table "groups", force: true do |t|
     t.string   "name"
-    t.integer  "position",   default: 1
+    t.integer  "position",                    default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "short_name"
     t.string   "slug"
+    t.string   "featured_image_file_name"
+    t.string   "featured_image_content_type"
+    t.integer  "featured_image_file_size"
+    t.datetime "featured_image_updated_at"
   end
 
   create_table "images", force: true do |t|

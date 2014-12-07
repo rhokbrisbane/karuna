@@ -1,6 +1,8 @@
 
 <% content_for :page_title, @group.name %>
 
+<% content_for :featured_image, @group.featured_image.url if @group.featured_image.present? %>
+
 <nav class='articles'>
   <% if @group.articles.any? %>
     <div class="grid-container">
@@ -14,3 +16,12 @@
     <p>No articles have been created for this group yet. :(</p>
   <% end %>
 </nav>
+
+<div class='arrow-nav'>
+  <% unless @prev.blank? %>
+      <%= link_to "<< Previous Group", @prev, class: 'previous' %>
+  <% end %>
+  <% unless @next.blank? %>
+      <%= link_to "Next Group >>", @next, class: 'next' %>
+  <% end %>
+</div>

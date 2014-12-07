@@ -4,9 +4,13 @@
     <h3><%= group.name %></h3>
 
     <% if group.articles.any? %>
+      <div class="grid-container">
       <% group.articles.each do |article| %>
-        <%= link_to article.title, [group, article] %>
+        <div class="one-half">
+          <%= link_to article.title, [group, article] %>
+        </div>
       <% end %>
+     </div>
     <% else %>
       <p>No articles have been created yet. :(</p>
     <% end %>

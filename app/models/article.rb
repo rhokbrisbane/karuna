@@ -4,8 +4,9 @@ class Article < ActiveRecord::Base
 
   belongs_to :group
 
-  validates :title, presence: true
-  validates :short_title, presence: true
+  validates :title, :short_title, presence: true
+
+  mount_uploader :featured_image, FeaturedImageUploader, :mount_on => :featured_image_file_name
 
   delegate :to_s, to: :title
 

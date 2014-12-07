@@ -1,7 +1,8 @@
 
 .header {
-  background: asset-url("desktop-image-composite.jpg") no-repeat center;
-  background-size: cover;
+  background: asset-url("default_hero.jpg") no-repeat center;
+  background-color: #888;
+  @include background-size(cover);
   overflow: hidden;
 
   .page-title {
@@ -21,5 +22,9 @@
   float: left;
   width: 20em;
   margin: auto;
-  background: $color-primary;
+  background: $white;
+
+  &.red {
+    background: $color-primary;
+  }
 }

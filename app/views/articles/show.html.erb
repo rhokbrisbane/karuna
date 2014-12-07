@@ -5,10 +5,19 @@
   <iframe width="560" height="315" src="http://www.youtube.com/embed/<%= @video_id %>?rel=0" frameborder="0"></iframe>
 <% end %>
 
-<% unless @article.audio_link.blank? %>
+<% unless @soundcloud_embed.blank? %>
   <%= @soundcloud_embed.html_safe %>
 <% end %>
 
 <div class='article-body'>
   <%= @article.body.html_safe %>
+</div>
+
+<div class='arrow-nav'>
+<% unless @prev.blank? %>
+<%= link_to "<< Previous Article", [@prev.group, @prev], class: 'previous' %>
+<% end %>
+<% unless @next.blank? %>
+<%= link_to "Next Article >>", [@next.group, @next], class: 'next' %>
+<% end %>
 </div>

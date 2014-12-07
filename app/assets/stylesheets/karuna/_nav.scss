@@ -7,6 +7,8 @@
   a {
     display: block;
     background: $white;
+    font-family: $font-family-headings;
+    font-weight: bold;
     border-radius: 0 1em 1em 0;
     padding: .25em 1em;
     margin: .5em 0;
@@ -15,5 +17,16 @@
       background: $color-primary;
       color: $white;
     }
+  }
+}
+
+.arrow-nav {
+  margin-top: 20px;
+
+  a.previous {
+    float: left;
+  }
+  a.next {
+    float: right;
   }
 }

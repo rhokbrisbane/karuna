@@ -7,5 +7,7 @@ class Group < ActiveRecord::Base
 
   validates :name, :short_name, presence: true
 
+  mount_uploader :featured_image, FeaturedImageUploader, :mount_on => :featured_image_file_name
+
   delegate :to_s, to: :name
 end
