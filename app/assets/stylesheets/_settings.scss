@@ -16,7 +16,10 @@ $font-size:               100%;
 
 // Colours
 
-$color-primary:             #C4064E;
+$green:                     #0B9300;
+$red:                       #C4064E;
+
+$color-primary:             $red;
 $color-primary-light:       lighten($color-primary, 30%);
 $color-primary-dark:        darken($color-primary, 30%);
 
@@ -28,7 +31,7 @@ $gray:                      lighten($black, 33.5%);
 $gray-light:                lighten($black, 75%);
 $gray-lighter:              lighten($black, 87.5%);
 
-$color-success:             hsl(85, 60%, 52%);
+$color-success:             $green;
 $color-success-light:       lighten($color-success, 35%);
 $color-warning:             hsl(45, 83%, 73%);
 $color-warning-light:       lighten($color-warning, 35%);

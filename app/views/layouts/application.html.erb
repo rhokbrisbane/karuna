@@ -29,7 +29,7 @@
 </head>
 <body>
   <header class='header'>
-    <%= link_to image_tag('logo.png'), root_path, class: 'logo' %>
+    <%= link_to image_tag('logo.png'), root_path, class: "logo#{request.path == root_path ? ' red' : nil}" %>
 
     <nav class='group-nav'>
       <%= render partial: 'layouts/nav' %>
@@ -56,7 +56,8 @@
     <div class="grid-container">
 
       <div class="one-half">
-        <%= link_to 'Karuna', 'http://karuna.org.au/' %>
+        &copy; <%= Time.zone.now.year %>
+        <%= link_to 'Karuna Hsopice Service Ltd.', 'http://karuna.org.au/' %>
 
         <ul class="social-links">
           <li class="facebook">
@@ -67,12 +68,15 @@
           </li>
         </ul>
       </div>
-      <div class="one-half">
+      <div class="one-half last">
+        <div class="footer-nav-links">
+          <%= link_to 'About', 'http://karuna.org.au/volunteer' %> | <%= link_to 'Volunteer', 'http://karuna.org.au/volunteer' %> | <%= link_to 'Contact Us', 'http://karuna.org.au/contact' %> | <%= link_to 'Admin', admin_root_path %>
+        </div>
+
         <% if current_admin_user %>
-          Currently logged in as <strong><%= current_admin_user.email %></strong>
+          <small>Currently logged in as <strong><%= current_admin_user.email %></strong></small>
         <% end %>
 
-        <%= link_to 'Admin', admin_root_path %>
       </div>
     </div>
   </footer>
