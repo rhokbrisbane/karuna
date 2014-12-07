@@ -1,7 +1,7 @@
 ActiveAdmin.register Group do
   menu priority: 1
 
-  permit_params :name, :short_name, :position
+  permit_params :name, :short_name, :position, :featured_image
 
   index do
     selectable_column
@@ -21,16 +21,18 @@ ActiveAdmin.register Group do
     attributes_table do
       row :id
       row :name
+      row('Featured Image') { image_tag group.featured_image.url(:thumb) }
       row :short_name
       row :position
       row :created_at
     end
   end
 
-  form do |f|
+  form :html => {:multipart => true} do |f|
     f.inputs do
       f.input :name
       f.input :short_name, hint: "Enter a short name to be shown in the link to this group"
+      f.input :featured_image, as: :file
       f.input :position, hint: "Ordered from low to high numbers", input_html: { min: "1" }
     end
     f.actions

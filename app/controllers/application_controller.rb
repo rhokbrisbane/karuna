@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   private
 
   def groups
-    @groups ||= Group.all.order(:position)
+    groups ||= Group.all.order(:position)
   end
 end

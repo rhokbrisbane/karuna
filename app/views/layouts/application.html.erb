@@ -28,8 +28,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header class='header'>
-    <%= link_to image_tag('logo.png'), root_path, class: "logo#{request.path == root_path ? ' red' : nil}" %>
+
+  <header class='header' style='<%= "background-image: url(#{yield :featured_image});" if content_for?(:featured_image) %>'>
+
+    <%= link_to image_tag("logo#{request.path == root_path ? nil : '-red'}.png"), root_path, class: "logo#{request.path == root_path ? ' red' : nil}" %>
 
     <nav class='group-nav'>
       <%= render partial: 'layouts/nav' %>

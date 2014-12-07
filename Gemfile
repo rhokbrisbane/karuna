@@ -11,6 +11,7 @@ gem 'compass-rails'
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem "paperclip", "~> 4.2"
 gem 'pg'
 gem 'pg_search'
 gem 'sass-rails', '~> 4.0.3'

@@ -4,8 +4,10 @@ class Article < ActiveRecord::Base
 
   belongs_to :group
 
-  validates :title, presence: true
-  validates :short_title, presence: true
+  has_attached_file :featured_image, :styles => { :thumb => "100x100>", :medium => "300x300>" }, :default_url => "/default_hero.jpg"
+  validates_attachment :featured_image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+
+  validates :title, :short_title, presence: true
 
   delegate :to_s, to: :title
 
