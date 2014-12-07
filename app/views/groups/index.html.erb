@@ -5,7 +5,7 @@
 
     <% if group.articles.any? %>
       <% group.articles.each do |article| %>
-        <%= link_to article.title, article_path(article) %>
+        <%= link_to article.title, [group, article] %>
       <% end %>
     <% else %>
       <p>No articles have been created yet. :(</p>
