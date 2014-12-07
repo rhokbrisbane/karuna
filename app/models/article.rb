@@ -4,10 +4,9 @@ class Article < ActiveRecord::Base
 
   belongs_to :group
 
-  has_attached_file :featured_image, :styles => { :thumb => "100x100>", :medium => "300x300>" }, :default_url => "/default_hero.jpg"
-  validates_attachment :featured_image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
-
   validates :title, :short_title, presence: true
+
+  mount_uploader :featured_image, FeaturedImageUploader, :mount_on => :featured_image_file_name
 
   delegate :to_s, to: :title
 

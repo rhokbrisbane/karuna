@@ -69,6 +69,7 @@ GEM
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
     awesome_print (1.2.0)
+    aws_cf_signer (0.1.3)
     bcrypt (3.1.9)
     bourbon (3.2.3)
       sass (~> 3.2)
@@ -77,9 +78,17 @@ GEM
     bullet (4.14.0)
       activesupport (>= 3.0.0)
       uniform_notifier (>= 1.6.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     chunky_png (1.3.3)
     climate_control (0.0.3)
       activesupport (>= 3.0)
+    cloudinary (1.0.78)
+      aws_cf_signer
+      rest-client
     cocaine (0.5.4)
       climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
@@ -150,10 +159,12 @@ GEM
     method_source (0.8.2)
     mime-types (2.4.3)
     mimemagic (0.2.1)
+    mini_magick (4.0.1)
     minitest (5.4.3)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    netrc (0.9.0)
     orm_adapter (0.5.0)
     paperclip (4.2.0)
       activemodel (>= 3.0.0)
@@ -216,6 +227,9 @@ GEM
       polyamorous (~> 1.1)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    rest-client (1.7.2)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     routes (0.2.0)
     sass (3.2.19)
     sass-rails (4.0.5)
@@ -264,13 +278,16 @@ DEPENDENCIES
   active_admin_editor
   activeadmin!
   bullet
+  carrierwave
+  cloudinary
   coffee-rails (~> 4.0.0)
   compass-rails
   devise
   friendly_id (~> 5.0.0)
   jbuilder (~> 2.0)
   jquery-rails
-  paperclip (~> 4.2)
+  mini_magick
+  paperclip
   pg
   pg_search
   pry-meta
