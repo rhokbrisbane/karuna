@@ -3,6 +3,12 @@
 
 <% content_for :featured_image, @group.featured_image.url if @group.featured_image.present? %>
 
+<% unless @group.description.blank? %>
+<div class='article-body'>
+  <%= @group.description.html_safe %>
+</div>
+<% end %>
+
 <nav class='articles'>
   <% if @group.articles.any? %>
     <div class="grid-container">
