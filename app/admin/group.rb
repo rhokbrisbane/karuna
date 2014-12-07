@@ -30,7 +30,7 @@ ActiveAdmin.register Group do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :short_name
+      f.input :short_name, hint: "Enter a short name to be shown in the link to this group"
       f.input :position, hint: "Ordered from low to high numbers", input_html: { min: "1" }
     end
     f.actions

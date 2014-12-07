@@ -40,10 +40,10 @@ ActiveAdmin.register Article do
     f.inputs do
       f.input :group
       f.input :title
-      f.input :short_title
+      f.input :short_title, hint: "Enter a short title to be shown in the link to this article"
       f.input :body, as: :html_editor
-      f.input :video_link
-      f.input :audio_link
+      f.input :video_link, hint: "Enter a YouTube link (if applicable)"
+      f.input :audio_link, hint: "Enter a Soundcloud link (if applicable)"
       f.input :position, hint: "Ordered from low to high numbers", input_html: { min: "1" }
     end
     f.actions
