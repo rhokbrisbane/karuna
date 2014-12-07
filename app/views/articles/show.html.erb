@@ -1,5 +1,5 @@
 
-<h1 class='page-title'><%= @article.title %></h1>
+<% content_for :page_title, @article.title %>
 
 <% unless @video_id.blank? %>
   <iframe width="560" height="315" src="http://www.youtube.com/embed/<%= @video_id %>?rel=0" frameborder="0"></iframe>

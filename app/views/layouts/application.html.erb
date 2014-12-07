@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><% "#{yield(:page_title)} | " if content_for?(:page_title) %>Karuna</title>
+  <meta charset="utf-8">
+
+  <title><% if content_for?(:page_title) %> <%= yield :page_title %> | <% end %> Karuna</title>
 
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
   <meta name='viewport' content='width = device-width, initial-scale=1'>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+
+  <meta property="og:title" content="<% if content_for?(:page_title) %> <%= yield :page_title %> | <% end %> Karuna">
+  <meta property="og:site_name" content="Karuna">
+  <meta property="og:image" content="<%= asset_url('logo-red.png') %>">
 
   <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag :application, media: 'all' %>
 
-  <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Josefin+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
 
   <!--[if lt IE 9]>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -20,12 +29,23 @@
 </head>
 <body>
   <header class='header'>
+    <%= link_to image_tag('logo.png'), root_path, class: 'logo' %>
+
+    <nav class='group-nav'>
+      <%= render partial: 'layouts/nav' %>
+    </nav>
+
     <div class="container">
-      <%= link_to image_tag('logo-red.svg'), root_path, class: 'logo' %>
+
+      <% if content_for?(:page_title) %>
+        <h1 class='page-title'>
+          <%= yield :page_title %>
+        </h1>
+      <% end %>
     </div>
   </header>
 
-  <section>
+  <section class='main'>
     <div class="container">
       <%= yield %>
     </div>
@@ -33,13 +53,27 @@
 
   <footer class='footer'>
     <div class="container">
+    <div class="grid-container">
 
-      <% if current_admin_user %>
-        Currently logged in as <strong><%= current_admin_user.email %></strong>
-      <% end %>
+      <div class="one-half">
+        <%= link_to 'Karuna', 'http://karuna.org.au/' %>
 
-      <%= link_to 'Admin', admin_root_path %>
+        <ul class="social-links">
+          <li class="facebook">
+            <img alt="facebook" src="//karuna.org.au/img/social/facebook.png" href="https://www.facebook.com/KarunaHospice">
+          </li>
+          <li class="twitter">
+            <img alt="twitter" src="//karuna.org.au/img/social/twitter.png">
+          </li>
+        </ul>
+      </div>
+      <div class="one-half">
+        <% if current_admin_user %>
+          Currently logged in as <strong><%= current_admin_user.email %></strong>
+        <% end %>
 
+        <%= link_to 'Admin', admin_root_path %>
+      </div>
     </div>
   </footer>
 </body>

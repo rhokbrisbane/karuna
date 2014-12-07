@@ -1,13 +1,15 @@
 
-<h1 class='page-title'><%= link_to @group.name, short_group_path(@group) %></h1>
-
-<p id="notice"><%= notice %></p>
+<% content_for :page_title, @group.name %>
 
 <nav class='articles'>
   <% if @group.articles.any? %>
-    <% @group.articles.each do |article| %>
-      <%= link_to article.title, [@group, article] %>
-    <% end %>
+    <div class="grid-container">
+      <% @group.articles.each do |article| %>
+        <div class="one-half">
+          <%= link_to article.title, [@group, article] %>
+        </div>
+      <% end %>
+    </div>
   <% else %>
     <p>No articles have been created for this group yet. :(</p>
   <% end %>

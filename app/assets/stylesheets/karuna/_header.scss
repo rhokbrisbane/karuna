@@ -1,0 +1,25 @@
+
+.header {
+  background: asset-url("desktop-image-composite.jpg") no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+
+  .page-title {
+    float: right;
+    clear: both;
+    color: $white;
+    margin-bottom: .25em;
+    padding: .125em .25em;
+    font-size: 2.5em;
+    line-height: 1.25em;
+    background: $color-primary;
+  }
+
+}
+
+.logo {
+  float: left;
+  width: 20em;
+  margin: auto;
+  background: $color-primary;
+}

@@ -1,5 +1,7 @@
 
-$font-family:             'Open Sans', 'Helvetica Neue', sans-serif;
+// Typography
+
+$font-family:             'Josefin Sans', 'Futura', 'Helvetica Neue', sans-serif;
 $font-family-body:        $font-family;
 $font-family-headings:    $font-family;
 $font-family-input:       $font-family;
@@ -18,8 +20,8 @@ $color-primary:             #C4064E;
 $color-primary-light:       lighten($color-primary, 30%);
 $color-primary-dark:        darken($color-primary, 30%);
 
-$black:                     hsl(0,0%,9%);
-$white:                     lighten($black, 93.5%);
+$black:                     hsl(0, 0%, 9%);
+$white:                     #F7F0E8;
 $gray-darker:               lighten($black, 13.5%);
 $gray-dark:                 lighten($black, 20%);
 $gray:                      lighten($black, 33.5%);

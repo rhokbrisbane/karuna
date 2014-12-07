@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
-ruby "2.1.5"
+ruby '2.1.5'
 
 gem 'rails', '4.1.8'
 
 gem 'activeadmin', github: 'gregbell/active_admin' # better rails 4 support
 gem 'active_admin_editor'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'compass-rails'
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'

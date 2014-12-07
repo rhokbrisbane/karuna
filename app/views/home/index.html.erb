@@ -1,14 +1,11 @@
 
-<nav class='articles'>
-  <% @groups.each do |group| %>
-    <h3><%= link_to group.name, short_group_path(group) %></h3>
+<h1>Welcome to Karuna</h1>
 
-    <% if group.articles.any? %>
-      <% group.articles.each do |article| %>
-        <%= link_to article.title, [group, article] %>
-      <% end %>
-    <% else %>
-      <p>No articles have been created yet. :(</p>
-    <% end %>
-  <% end %>
-</nav>
+<p>Karuna helps people deal with loss in ways that transform and enrich lives. Karuna offers a strength based model of care to:</p>
+
+<ul>
+  <li>Minimize fear and pain for people who are dealing with the loss of life </li>
+  <li>Transform the way society and individuals think about and experience death</li>
+  <li>Help people accept the transient nature of life and use it as a catalyst to make it more meaningful</li>
+
+<p>Karuna’s services are linked to the times in life when people are most likely to be seeking answers and care either for themselves or others. These include situations where lives are limited by illness, when facing death or dying, when grieving and when seeking meaning in life.</p>

@@ -1,0 +1,3 @@
+<% groups.each do |group| %>
+  <%= link_to group.name, short_group_path(group), class: ('active' if @group && group == @group) %>
+<% end %>

@@ -1,0 +1,19 @@
+
+.group-nav {
+  float: left;
+  clear: left;
+  margin: 2em 0 4em;
+
+  a {
+    display: block;
+    background: $white;
+    border-radius: 0 1em 1em 0;
+    padding: .25em 1em;
+    margin: .5em 0;
+
+    &.active {
+      background: $color-primary;
+      color: $white;
+    }
+  }
+}
