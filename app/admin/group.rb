@@ -24,7 +24,7 @@ ActiveAdmin.register Group do
       row :name
       row('Featured Image') { image_tag group.featured_image.url(:thumb) }
       row :short_name
-      row :description
+      row(:description) { group.description.html_safe }
       row :position
       row :created_at
     end
@@ -35,7 +35,7 @@ ActiveAdmin.register Group do
       f.input :name
       f.input :short_name, hint: "Enter a short name to be shown in the link to this group"
       f.input :featured_image, as: :file
-      f.input :description, hint: "Description or introduction for this group"
+      f.input :description, as: :html_editor, hint: "Description or introduction for this group"
       f.input :position, hint: "Ordered from low to high numbers", input_html: { min: "1" }
     end
     f.actions
