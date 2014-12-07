@@ -12,10 +12,14 @@ class ArticlesController < ApplicationController
     end
     unless @article.audio_link.blank?
       # retrieve embed info from soundcloud
-      sc_client = Soundcloud.new(:client_id => Rails.application.secrets.sc_client_id)
-      embed_info = sc_client.get('/oembed', :url => @article.audio_link, :iframe => false,
+      begin
+        sc_client = Soundcloud.new(:client_id => Rails.application.secrets.sc_client_id)
+        embed_info = sc_client.get('/oembed', :url => @article.audio_link, :iframe => false,
                                  :show_comments => false, :color => 'C4064E')
-      @soundcloud_embed = embed_info['html']
+        @soundcloud_embed = embed_info['html']
+      rescue SoundCloud::ResponseError
+        #do nothing, the soundcloud embed will not be displayed
+      end
     end
   end
 end
