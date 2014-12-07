@@ -6,7 +6,7 @@ ActiveAdmin.register Meditation do
       f.input :name
       f.input :description
       f.input :media_url
-      f.input :name
+      # f.input :name
     end
     f.actions
   end

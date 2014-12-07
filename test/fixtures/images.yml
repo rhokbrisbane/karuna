@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  alt: MyString
+  url: MyString
+  meditation_id: 
+
+two:
+  title: MyString
+  alt: MyString
+  url: MyString
+  meditation_id: 

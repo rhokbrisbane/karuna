@@ -18,4 +18,9 @@
   </audio>
 </p>
 
+<p>
+  <% @meditation.images.find_each do |image| %>
+    <img src="<%= image.url %>" alt="<%= image.alt %>" title="<%= image.title %>">
+  <% end %>
+</p>
 <%= link_to 'Back', meditations_path %>
