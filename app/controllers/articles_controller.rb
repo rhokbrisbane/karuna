@@ -5,6 +5,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @next = Article.find_by_group_id_and_position(@article.group, @article.position + 1)
+    @prev = Article.find_by_group_id_and_position(@article.group, @article.position - 1)
     unless @article.video_link.blank?
       #parse Youtube id from url
       video_url = URI.parse(@article.video_link)

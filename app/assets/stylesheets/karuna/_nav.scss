@@ -19,3 +19,14 @@
     }
   }
 }
+
+.arrow-nav {
+  margin-top: 20px;
+
+  a.previous {
+    float: left;
+  }
+  a.next {
+    float: right;
+  }
+}

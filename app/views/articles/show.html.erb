@@ -12,3 +12,12 @@
 <div class='article-body'>
   <%= @article.body.html_safe %>
 </div>
+
+<div class='arrow-nav'>
+<% unless @prev.blank? %>
+<%= link_to "<< Previous Article", [@prev.group, @prev], class: 'previous' %>
+<% end %>
+<% unless @next.blank? %>
+<%= link_to "Next Article >>", [@next.group, @next], class: 'next' %>
+<% end %>
+</div>
