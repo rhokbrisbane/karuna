@@ -86,7 +86,8 @@ button, .button {
 
 
 .lotus-articles {
-  text-align: right;
+  text-align: center;
+  @include transform(translateX(1.5em));
 
   a {
     display: inline-block;
@@ -114,19 +115,17 @@ button, .button {
   }
 
   @media screen and (max-width: $breakpoint-medium) {
-    text-align: center;
-    @include transform(translateX(1.5em));
 
     a {
       margin: 0 .25em;
 
-      &:first-child + a,
-      &:nth-last-child(2) {
+      &:last-child {
         display: none;
       }
 
-      &:first-child, &:last-child {
-        margin-top: 1em;
+      &:first-child {
+        margin-top: 1.5em;
+        + a { margin: 0; }
       }
     }
 
