@@ -96,7 +96,11 @@ button, .button {
     padding: .25em 1em;
     background: $aqua;
     color: white;
+    font-weight: bold;
+    font-family: $font-family-headings;
     border-radius: 1em;
+    max-width: 8em;
+    line-height: 1.2em;
 
     &:first-child, &:last-child {
       margin-top: 3em;
