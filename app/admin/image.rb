@@ -1,7 +1,8 @@
 ActiveAdmin.register Image do
   menu label: "Meditation images"
 
-  permit_params :title, :postion, :url, :meditation_id
+  permit_params :title, :postion, :url, :meditation_id,
+    :position
 
   index do
     selectable_column

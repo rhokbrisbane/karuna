@@ -11,7 +11,7 @@
   <div class="meditation-container">
 
     <div class='slick-carousel'>
-      <% @meditation.images.find_each do |image| %>
+      <% @meditation.images.order(:position).find_each do |image| %>
         <div style="background-image: url(<%= image.url %>);"></div>
       <% end %>
     </div>
