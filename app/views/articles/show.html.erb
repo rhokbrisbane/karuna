@@ -16,10 +16,10 @@
 </div>
 
 <div class='arrow-nav'>
-<% unless @prev.blank? %>
-<%= link_to "<< Previous Article", [@prev.group, @prev], class: 'previous' %>
-<% end %>
-<% unless @next.blank? %>
-<%= link_to "Next Article >>", [@next.group, @next], class: 'next' %>
-<% end %>
+  <% unless @prev.blank? %>
+    <%= link_to "<< Previous Article", short_article_path(@prev.group, @prev), class: 'previous' %>
+  <% end %>
+  <% unless @next.blank? %>
+    <%= link_to "Next Article >>", short_article_path(@next.group, @next), class: 'next' %>
+  <% end %>
 </div>

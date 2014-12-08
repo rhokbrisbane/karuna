@@ -67,7 +67,7 @@ button, .button {
   }
 }
 
-.donate-button {
+.donate-button, .start-meditation {
   background-color: $color-success;
   font-size: 1.5em;
   font-weight: bold;
@@ -81,4 +81,56 @@ button, .button {
   .three-quarters:not(.no-break) {
     display: block;
   }
+}
+
+
+
+.lotus-articles {
+  text-align: right;
+
+  a {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 .5em;
+    padding: .25em 1em;
+    background: $aqua;
+    color: white;
+    border-radius: 1em;
+
+    &:first-child, &:last-child {
+      margin-top: 3em;
+    }
+
+    &:first-child + a,
+    &:nth-last-child(2) {
+      margin-top: 1.5em;
+    }
+
+    &:nth-child(1) { background-color: $aqua; }
+    &:nth-child(2) { background-color: $green; }
+    &:nth-child(3) { background-color: $navy; }
+    &:nth-child(4) { background-color: $red; }
+    &:nth-child(5) { background-color: $blue; }
+  }
+
+  @media screen and (max-width: $breakpoint-medium) {
+    text-align: center;
+    @include transform(translateX(1.5em));
+
+    a {
+      margin: 0 .25em;
+
+      &:first-child + a,
+      &:nth-last-child(2) {
+        display: none;
+      }
+
+      &:first-child, &:last-child {
+        margin-top: 1em;
+      }
+    }
+
+  }
+
+  @media screen and (max-width: $breakpoint-small) { display: none; }
 }

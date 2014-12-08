@@ -4,8 +4,10 @@
 /tmp
 .sass-cache
 config/database.yml
-public/system
 vendor/assets/bower_components
 vendor/assets/bower_components/*
-public/system/
+public/system
+public/system/*
+public/uploads/
+public/uploads/*
 .idea/*

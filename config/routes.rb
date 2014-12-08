@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :meditations, only: [:index, :show]
 
   get ':id', to: 'groups#show', as: 'short_group'
+  get ':group_id/:id', to: 'articles#show', as: 'short_article'
 
   root to: 'home#index'
 end

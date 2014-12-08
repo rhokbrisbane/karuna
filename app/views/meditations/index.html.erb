@@ -1,12 +1,18 @@
 
 <% content_for :page_title, "Guided meditation" %>
 
-<% if @meditations.any? %>
-  <nav class='meditations'>
-    <% @meditations.each do |meditation| %>
-      <%= link_to meditation.name, meditation %>
-    <% end %>
-  </nav>
-<% else %>
-  <p>No meditations have been created yet. :(</p>
-<% end %>
+<nav class='articles'>
+  <% if @meditations.any? %>
+    <div class="grid-container">
+      <% @meditations.each do |meditation| %>
+        <div class="one-half">
+          <%= link_to '', meditation, class: 'article-thumb', style: ("background-image: url(#{meditation.images.first.url.url});" if meditation.images.any? && meditation.images.first.url.present?) %>
+
+          <%= link_to meditation.name, meditation, class: 'article-link' %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>No meditations have been created yet. :(</p>
+  <% end %>
+</nav>

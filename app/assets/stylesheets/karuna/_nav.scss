@@ -21,12 +21,9 @@
 }
 
 .arrow-nav {
-  margin-top: 20px;
+  margin-top: 1.5em;
+  overflow: hidden;
 
-  a.previous {
-    float: left;
-  }
-  a.next {
-    float: right;
-  }
+  a.previous { float: left; }
+  a.next { float: right; }
 }

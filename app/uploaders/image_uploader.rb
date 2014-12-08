@@ -1,5 +1,4 @@
-class FeaturedImageUploader < CarrierWave::Uploader::Base
-  include CarrierWave::Compatibility::Paperclip
+class ImageUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave if Rails.env.production?
   include CarrierWave::MiniMagick
 
@@ -7,7 +6,7 @@ class FeaturedImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  process :resize_to_fill => [2100, 1400]
+  process :resize_to_fill => [1800, 1200]
 
   version :medium do
     process :resize_to_fill => [300, 200]
@@ -20,5 +19,4 @@ class FeaturedImageUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(jpg jpeg jpe gif png)
   end
-
 end

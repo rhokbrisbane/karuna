@@ -14,9 +14,9 @@
     <div class="grid-container">
       <% @group.articles.each do |article| %>
         <div class="one-half">
-          <%= link_to '', [@group, article], class: 'article-thumb', style: ("background-image: url(#{article.featured_image.url});" if article.featured_image.present?) %>
+          <%= link_to '', short_article_path(@group, article), class: 'article-thumb', style: ("background-image: url(#{article.featured_image.url});" if article.featured_image.present?) %>
 
-          <%= link_to article.title, [@group, article], class: 'article-link' %>
+          <%= link_to article.title, short_article_path(@group, article), class: 'article-link' %>
         </div>
       <% end %>
     </div>
@@ -27,9 +27,9 @@
 
 <div class='arrow-nav'>
   <% unless @prev.blank? %>
-    <%= link_to "<< Previous Group", @prev, class: 'previous' %>
+    <%= link_to "<< Previous", short_group_path(@prev), class: 'previous' %>
   <% end %>
   <% unless @next.blank? %>
-    <%= link_to "Next Group >>", @next, class: 'next' %>
+    <%= link_to "Next >>", short_group_path(@next), class: 'next' %>
   <% end %>
 </div>

@@ -1,0 +1,77 @@
+
+
+.meditation-player {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  min-width: 280px;
+  text-align: center;
+  @include transform(translate(-50%,-50%));
+
+  &.playing {
+    .play-pause,
+    .progress-indciator { background-color: $color-primary; }
+  }
+}
+
+.meditation-progress {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 1.5em;
+  margin: 0 auto 1.5em;
+  background: white;
+  overflow: hidden;
+  background: rgba(white, .5);
+  border-radius: 20px;
+}
+
+.progress-indciator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: $gray-dark;
+  opacity: .75;
+}
+
+.meditation-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background: black;
+  color: white;
+
+  .slick-carousel, .slick-list, .slick-track {
+    margin: 0;
+    height: 100%;
+  }
+
+  .slick-slide {
+    background-position: center;
+    @include background-size(cover);
+  }
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1.5em;
+  }
+}
+
+#meditation-audio {
+  position: fixed;
+  bottom: 0;
+  z-index: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  opacity: 0;
+  visibility: hidden;
+}

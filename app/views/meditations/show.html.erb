@@ -1,21 +1,46 @@
 <% content_for :page_title, @meditation.name %>
 
-<%= @meditation.description.html_safe %>
+<p><%= @meditation.description.html_safe %></p>
 
 <br>
 
-<p>
-  <audio src="<%= @meditation.media_url %>" controls>
-    Your browser does not support the <code>audio</code> element.
-  </audio>
-</p>
+<% unless @soundcloud_embed.blank? %>
 
-<div class='slick-carousel'>
-  <% @meditation.images.find_each do |image| %>
-    <div>
-      <img src="<%= image.url %>" alt="<%= image.alt %>" title="<%= image.title %>">
+  <button class="button start-meditation">Start meditation</button>
+
+  <div class="meditation-container">
+
+    <div class='slick-carousel'>
+      <% @meditation.images.find_each do |image| %>
+        <div style="background-image: url(<%= image.url %>);"></div>
+      <% end %>
     </div>
+
+    <div class="meditation-player playing">
+      <div class="meditation-progress">
+        <span class='progress-indciator'></span>
+      </div>
+
+      <button class="play-pause">Pause</button>
+    </div>
+
+    <button class="close">Exit</button>
+  </div>
+
+  <div id='meditation-audio'><%= @soundcloud_embed.html_safe %></div>
+
+  <script type="text/javascript" src="//w.soundcloud.com/player/api.js"></script>
+
+<% else %>
+  <p>Guided meditation coming soon&hellip;</p>
+<% end %>
+
+
+<div class='arrow-nav'>
+  <% unless @prev.blank? %>
+    <%= link_to "<< Previous", @prev, class: 'previous' %>
+  <% end %>
+  <% unless @next.blank? %>
+    <%= link_to "Next >>", @next, class: 'next' %>
   <% end %>
 </div>
-
-<%= link_to 'All meditations', meditations_path %>
