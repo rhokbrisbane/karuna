@@ -11,29 +11,43 @@
 
   &.playing {
     .play-pause,
-    .progress-indciator { background-color: $color-primary; }
+    .progress-indicator {
+      background-color: $color-primary;
+      background-color: rgba($color-primary, .75);
+    }
   }
+}
+
+.meditation-progress,
+.progress-indicator {
+  background-position: 1em;
+  background-repeat: no-repeat;
+  @include background-size(10em);
 }
 
 .meditation-progress {
   display: block;
   position: relative;
-  width: 100%;
-  height: 1.5em;
+  width: 12em;
+  height: 12em;
   margin: 0 auto 1.5em;
-  background: white;
   overflow: hidden;
-  background: rgba(white, .5);
-  border-radius: 20px;
+  background-color: white;
+  background-color: rgba(white, .5);
+  border-radius: 1em;
+  cursor: pointer;
+  background-image: asset-url("logomark.png");
 }
 
-.progress-indciator {
+.progress-indicator {
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   background-color: $gray-dark;
-  opacity: .75;
+  background-color: rgba($gray-dark, .75);
+  pointer-events: none;
+  background-image: asset-url("logomark-white.png");
 }
 
 .meditation-container {

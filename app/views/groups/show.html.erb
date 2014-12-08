@@ -14,7 +14,7 @@
     <div class="grid-container">
       <% @group.articles.each do |article| %>
         <div class="one-half">
-          <%= link_to '', short_article_path(@group, article), class: 'article-thumb', style: ("background-image: url(#{article.featured_image.url});" if article.featured_image.present?) %>
+          <%= link_to '', short_article_path(@group, article), class: 'article-thumb', style: ("background-image: url(#{article.featured_image.url}); -webkit-background-size: cover; background-size: cover;" if article.featured_image.present?) %>
 
           <%= link_to article.title, short_article_path(@group, article), class: 'article-link' %>
         </div>

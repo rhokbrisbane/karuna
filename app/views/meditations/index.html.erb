@@ -6,7 +6,7 @@
     <div class="grid-container">
       <% @meditations.each do |meditation| %>
         <div class="one-half">
-          <%= link_to '', meditation, class: 'article-thumb', style: ("background-image: url(#{meditation.images.first.url.url});" if meditation.images.any? && meditation.images.first.url.present?) %>
+          <%= link_to '', meditation, class: 'article-thumb', style: ("background-image: url(#{meditation.images.first.url.url}); -webkit-background-size: cover; background-size: cover;" if meditation.images.any? && meditation.images.first.url.present?) %>
 
           <%= link_to meditation.name, meditation, class: 'article-link' %>
         </div>

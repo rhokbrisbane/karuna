@@ -46,7 +46,7 @@
       <% else %>
         <div class="lotus-articles">
           <% Article.all.sample(5).each do |article| %>
-            <%= link_to article.title, [article.group, article] %>
+            <%= link_to article.title, short_article_path(article.group, article) %>
           <% end %>
         </div>
       <% end %>

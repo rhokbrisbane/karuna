@@ -9,59 +9,59 @@ $ ->
       $('.play-pause').html('Finished. Play again?')
 
     widget.bind SC.Widget.Events.PLAY_PROGRESS, (progress) ->
-      $('.meditation-progress .progress-indciator').css
+      $('.meditation-progress .progress-indicator').css
         width: "#{progress.relativePosition * 100}%"
 
 
-    $('.start-meditation').on 'click', (e) ->
-      e.preventDefault()
+    widget.bind SC.Widget.Events.READY, ->
 
-      widget.play()
-      $('.meditation-container').fadeIn()
-      $('.meditation-player').addClass('playing').removeClass('finished')
-      $('.play-pause').html('Pause')
+      $('.start-meditation').on 'click', (e) ->
+        e.preventDefault()
 
-      $('.slick-carousel').slick
-        arrows: false
-        autoplay: true
-        autoplaySpeed: 10000
-        fade: true
-        infinite: true
-        pauseOnHover: false
-        slidesToShow: 1
-        speed: 1800
+        widget.play()
+        $('.meditation-container').fadeIn()
+        $('.meditation-player').addClass('playing').removeClass('finished')
+        $('.play-pause').html('Pause')
 
-    $('.meditation-container .close').on 'click', (e) ->
-      e.preventDefault()
+        $('.slick-carousel').slick
+          arrows: false
+          autoplay: true
+          autoplaySpeed: 10000
+          fade: true
+          infinite: true
+          pauseOnHover: false
+          slidesToShow: 1
+          speed: 1800
 
-      clearInterval(window.interval)
+      $('.meditation-container .close').on 'click', (e) ->
+        e.preventDefault()
 
-      $('.meditation-container').fadeOut()
-      widget.seekTo(0)
-      widget.pause()
+        clearInterval(window.interval)
 
-    $('.play-pause').on 'click', (e) ->
-      e.preventDefault()
-      $this = $(this)
+        $('.meditation-container').fadeOut()
+        widget.seekTo(0)
+        widget.pause()
 
-      widget.isPaused (boolean) ->
-        if boolean
-          $('.meditation-player').addClass('playing')
-          $this.html('Pause')
-          widget.play()
-        else
-          $('.meditation-player').removeClass('playing')
-          $this.html('Continue')
-          widget.pause()
+      $('.play-pause').on 'click', (e) ->
+        e.preventDefault()
+        $this = $(this)
+
+        widget.isPaused (boolean) ->
+          if boolean
+            $('.meditation-player').addClass('playing')
+            $this.html('Pause')
+            widget.play()
+          else
+            $('.meditation-player').removeClass('playing')
+            $this.html('Continue')
+            widget.pause()
 
 
-    $('.meditation-progress').on 'click', (e) ->
-      e.preventDefault()
+      $('.meditation-progress').on 'click', (e) ->
+        e.preventDefault()
+        cursor = e.offsetX / $(this).width()
 
-      cursor = e.offsetX / $(this).width()
-      console.log(cursor * 100 + '%')
-
-      widget.getDuration (duration) ->
-        millseconds = cursor * duration
-        widget.seekTo(millseconds)
+        widget.getDuration (duration) ->
+          millseconds = cursor * duration
+          widget.seekTo(millseconds)
 
