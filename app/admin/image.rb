@@ -7,7 +7,7 @@ ActiveAdmin.register Image do
     selectable_column
     id_column
     column :title
-    column('Image') { |meditation| image_tag meditation.url.thumb.url }
+    column('Image') { |meditation| image_tag meditation.url.url(:thumb) }
     column :meditation
     column :position
     actions
@@ -22,7 +22,7 @@ ActiveAdmin.register Image do
       row :id
       row :meditation
       row :title
-      row('Image') { image_tag meditation.url.thumb.url }
+      row('Image') { image_tag meditation.url.url(:thumb) }
       row :position
       row :created_at
     end
