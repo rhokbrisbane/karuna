@@ -16,6 +16,7 @@ class MeditationsController < InheritedResources::Base
         sc_client = Soundcloud.new(:client_id => Rails.application.secrets.sc_client_id)
         embed_info = sc_client.get('/oembed', :url => @meditation.media_url, :maxheight => 120,
                                  :show_comments => false, :color => 'C4064E')
+
         @soundcloud_embed = embed_info['html']
       rescue SoundCloud::ResponseError
         #do nothing, the soundcloud embed will not be displayed

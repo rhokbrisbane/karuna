@@ -16,20 +16,10 @@
       <% end %>
     </div>
 
-    <div class="meditation-player playing">
-      <div class="meditation-progress">
-        <span class='progress-indicator'></span>
-      </div>
-
-      <button class="play-pause">Pause</button>
-    </div>
+    <%= link_to '', @meditation.media_url, class: 'sc-player' %>
 
     <button class="close">Exit</button>
   </div>
-
-  <div id='meditation-audio'><%= @soundcloud_embed.html_safe %></div>
-
-  <script type="text/javascript" src="//w.soundcloud.com/player/api.js"></script>
 
 <% else %>
   <p>Meditation coming soon&hellip;</p>

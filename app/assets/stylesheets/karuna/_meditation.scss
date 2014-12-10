@@ -1,55 +1,4 @@
 
-
-.meditation-player {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 50%;
-  min-width: 280px;
-  text-align: center;
-  @include transform(translate(-50%,-50%));
-
-  &.playing {
-    .play-pause,
-    .progress-indicator {
-      background-color: $color-primary;
-      background-color: rgba($color-primary, .75);
-    }
-  }
-}
-
-.meditation-progress,
-.progress-indicator {
-  background-position: 1em;
-  background-repeat: no-repeat;
-  @include background-size(10em);
-}
-
-.meditation-progress {
-  display: block;
-  position: relative;
-  width: 12em;
-  height: 12em;
-  margin: 0 auto 1.5em;
-  overflow: hidden;
-  background-color: white;
-  background-color: rgba(white, .5);
-  border-radius: 1em;
-  cursor: pointer;
-  background-image: asset-url("logomark.png");
-}
-
-.progress-indicator {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  background-color: $gray-dark;
-  background-color: rgba($gray-dark, .75);
-  pointer-events: none;
-  background-image: asset-url("logomark-white.png");
-}
-
 .meditation-container {
   display: none;
   position: fixed;
@@ -79,13 +28,103 @@
   }
 }
 
-#meditation-audio {
-  position: fixed;
-  bottom: 0;
-  z-index: 0;
+.sc-player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 280px;
+  text-align: center;
+  @include transform(translate(-50%,-50%));
+
+  &.playing {
+    .sc-controls a, .sc-played {
+      background-color: $color-primary;
+      background-color: rgba($color-primary, .75);
+    }
+
+    .sc-play { z-index: -1; }
+  }
+}
+
+.sc-artwork-list, .sc-info,
+.sc-info-toggle, .sc-trackslist {
+  display: none;
+}
+
+.sc-controls {
+  position: relative;
+  margin: 1em auto;
+  height: 2.5em;
+
+  a {
+    @extend .button;
+    width: 7em;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -3.5em;
+  }
+
+  .sc-pause { z-index: 1; }
+  .sc-play { z-index: 2; }
+}
+
+.sc-waveform-container img { opacity: 0 }
+
+.sc-time-span {
+  display: block;
+  position: relative;
+  width: 12em;
+  height: 12em;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: white;
+  background-color: rgba(white, .5);
+  border-radius: 1em;
+  cursor: pointer;
+  background-image: asset-url("logomark.png");
+}
+
+.sc-time-span, .sc-played {
+  background-position: 1em;
+  background-repeat: no-repeat;
+  @include background-size(10em);
+}
+
+.sc-played, .sc-buffer {
+  position: absolute;
+  top: 0;
   left: 0;
-  height: 40px;
-  width: 40px;
-  opacity: 0;
-  visibility: hidden;
+  bottom: 0;
+}
+
+.sc-buffer {
+  background-color: rgba(200,200,200,0.25);
+  z-index: 1;
+}
+
+.sc-played {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: $gray-dark;
+  background-color: rgba($gray-dark, .75);
+  background-image: asset-url("logomark-white.png");
+}
+
+.sc-time-indicators {
+  display: inline-block;
+  margin: .5em 0 0;
+  background: rgba(0,0,0,.5);
+  padding: .25em .5em;
+  font-size: 80%;
+  border-radius: 2em;
+  color: #aaa;
+}
+
+.sc-time-indicators span {
+  color: white;
+  margin: 0 .25em;
 }
